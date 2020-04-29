@@ -34,7 +34,7 @@
      }
    }
    
-   function anim_image(idx,over) { if(idx==anim_idx) return; if(over) { settextcolor("anim_txt_play",'#0000ff'); if(anim_timer) clearTimeout(anim_timer); anim_on = false; } if(anim_idx>0) { settextcolor("anim_txt_time_"+anim_idx,'#0000ff'); } settextcolor("anim_txt_time_"+idx,'#ff0000'); setimage("anim_image_anim_anim",anim_images_anim_anim[idx]); anim_idx = idx;}
+   function anim_image(idx,over) { if(idx==anim_idx) return; if(over) { settextcolor("anim_txt_play",'#0000ff'); if(anim_timer) clearTimeout(anim_timer); anim_on = false; } if(anim_idx>0) { settextcolor("anim_txt_time_"+anim_idx,'#0000ff'); }; document.getElementById("anim_txt_time_"+idx).innerHTML=document.getElementById("anim_txt_time_"+idx).innerHTML.slice(-11); settextcolor("anim_txt_time_"+idx,'#ff0000'); setimage("anim_image_anim_anim",anim_images_anim_anim[idx]); anim_idx = idx;}
    
    function setimage(name,value){if(document.getElementById){img = document.getElementById(name); img.src = value; }else{document.images[name].src = value;}}
    function settextcolor(name,col){if(document.getElementById)document.getElementById(name).style.color = col;else{document.all[name].style.color = col;}}
